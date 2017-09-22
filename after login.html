@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>Homepage - Semantic</title>
+  <link rel="stylesheet" type="text/css" href="../Semantic/components/reset.css">
+  <link rel="stylesheet" type="text/css" href="../Semantic/components/site.css">
+
+  <link rel="stylesheet" type="text/css" href="../Semantic/components/container.css">
+  <link rel="stylesheet" type="text/css" href="../Semantic/components/grid.css">
+  <link rel="stylesheet" type="text/css" href="../Semantic/components/header.css">
+  <link rel="stylesheet" type="text/css" href="../Semantic/components/image.css">
+  <link rel="stylesheet" type="text/css" href="../Semantic/components/menu.css">
+
+  <link rel="stylesheet" type="text/css" href="../Semantic/components/divider.css">
+  <link rel="stylesheet" type="text/css" href="../Semantic/components/dropdown.css">
+  <link rel="stylesheet" type="text/css" href="../Semantic/components/segment.css">
+  <link rel="stylesheet" type="text/css" href="../Semantic/components/button.css">
+  <link rel="stylesheet" type="text/css" href="../dist/components/list.css">
+  <link rel="stylesheet" type="text/css" href="../Semantic/components/icon.css">
+  <link rel="stylesheet" type="text/css" href="../Semantic/components/sidebar.css">
+  <link rel="stylesheet" type="text/css" href="../Semantic/components/transition.css">
+<link rel="stylesheet" href="../font-awesome/font-awesome/css/font-awesome.min.css">
+  <style type="text/css">
+
+    .hidden.menu {
+      display: none;
+    }
+
+    .masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }
+
+
+  </style>
+
+ <script src="../Semantic/themes/default/assets/library/jquery.min.js"></script>
+  <script src="../Semantic/components/visibility.js"></script>
+  <script src="../Semantic/components/sidebar.js"></script>
+  <script src="../Semantic/components/transition.js"></script>
+  <script>
+  $(document)
+    .ready(function() {
+
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+    })
+  ;
+  </script>
+</head>
+<body>
+
+<!-- Following Menu -->
+<div class="ui large top fixed hidden menu">
+  <div class="ui container">
+    <a class="active item">主页</a>
+    <a class="item">记录</a>
+    <a class="item">查看</a>
+    <a class="item">下载</a>
+    <div class="right menu">
+      <div class="item">
+        <a class="ui button">账户</a>
+      </div>
+      <div class="item">
+        <a class="ui primary button">推出</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sidebar Menu -->
+<div class="ui vertical inverted sidebar menu">
+  <a class="active item"><i class="fa fa-home" aria-hidden="true"></i> 主页</a>
+  <a class="item"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 记录</a>
+  <a class="item"><i class="fa fa-book" aria-hidden="true"></i> 查看</a>
+  <a class="item"><i class="fa fa-download" aria-hidden="true"></i> 下载软件</a>
+  
+  <a class="item"><i class="fa fa-id-card" aria-hidden="true"></i> 账户设置</a>
+  
+  <a class="item"><i class="fa fa-sign-out" aria-hidden="true"></i> 推出</a>
+</div>
+
+
+<!-- Page Contents -->
+<div class="pusher">
+  <div class="ui inverted vertical masthead center aligned segment">
+
+    <div class="ui container">
+      <div class="ui large secondary inverted pointing menu">
+        <a class="toc item">
+          <i class="sidebar icon"></i>
+        </a>
+        <a class="active item">主页</a>
+        <a class="item">记录</a>
+        <a class="item">查看</a>
+        <a class="item">下载</a>
+        <div class="right item">
+          <a class="ui inverted button">账户</a>
+          <a class="ui inverted button">推出</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        <i class="fa fa-suitcase" aria-hidden="true"></i>
+      </h1>
+      <h2></h2>
+      <div class="ui huge blue button">开始记录 <i class="right arrow icon"></i></div>
+    </div>
+
+  </div>
+
+  <div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="eight wide column" align = "center">
+          <h1 class="ui header">望京合生麒麟社公寓</h1>
+ <p>北京市朝阳区望京阜通西路11号</p>
+       <a class="ui huge button">麒麟社</a>
+        </div>
+        <div class="six wide right floated column">
+          <img src="../pictures/qilinshe.jpg" class="ui large bordered rounded image">
+        </div>
+      </div>
+      <div class="row">
+        <div class="center aligned column">
+<div class="ui section divider"></div>
+        </div>
+        
+      </div>
+    </div>
+     
+
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">      
+                <div class="eight wide column" align = "center">
+          <h1 class="ui header">悠乐汇</h1>
+ <p>北京市广顺南大街和阜通东大街交界处</p>
+           <a class="ui huge button">悠乐汇</a>
+        </div>  
+         <div class="six wide right floated column">
+          <img src="../pictures/youlehui.jpg" class="ui large bordered rounded image">
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="center aligned column">
+      <div class="ui section divider"></div>
+        </div>
+      </div>
+    </div>
+     
+     
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="eight wide column" align = "center">
+          <h1 class="ui header">东亚望京中心</h1>
+ <p>北京市朝阳区望京广顺南大街和阜通西街交汇处</p>
+        <a class="ui huge button">东亚中心</a>
+        </div>
+        <div class="six wide right floated column">
+          <img src="../pictures/dongya.jpg" class="ui large bordered rounded image">
+        </div>
+      </div>
+      <div class="row">
+        <div class="center aligned column">
+          <div class="ui section divider"></div>
+        </div>
+      </div>
+    </div>
+    
+     
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">  
+              <div class="eight wide column" align = "center">
+          <h1 class="ui header">锐创国际中心</h1>
+ <p>北京市朝阳区望京科技园区望京东路8号</p>
+       <a class="ui huge button">锐创国际</a>
+        </div>      
+         <div class="six wide right floated column">
+          <img src="../pictures/ruichuangguoji.jpg" class="ui large bordered rounded image">
+        </div>
+        
+  
+
+      </div>
+      <div class="row">
+        <div class="center aligned column">
+          <div class="ui section divider"></div>
+        </div>
+      </div>
+    </div>
+ 
+  
+  </div>
+
+
+
+  <!--<div class="ui vertical stripe quote segment">
+    <div class="ui equal width stackable internally celled grid">
+      <div class="center aligned row">
+        <div class="column">
+          <h3>"What a Company"</h3>
+          <p>That is what they all say about us</p>
+        </div>
+        <div class="column">
+          <h3>"I shouldn't have gone with their competitor."</h3>
+          <p>
+            <img src="assets/images/avatar/nan.jpg" class="ui avatar image"> <b>Nan</b> Chief Fun Officer Acme Toys
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>-->
+
+
+
+
+ <div align= "center" class="ui black inverted vertical footer segment">
+  南湖
+ 
+</div>
+
+  </div>
+
+
+</body>
+
+</html>
